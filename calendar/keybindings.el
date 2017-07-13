@@ -11,5 +11,5 @@
 
 
 ;; Keybindings
-(spacemacs/declare-prefix "d" "bracket-prefix")
-(spacemacs/set-leader-keys "dd" 'cfw:open-calendar-buffer)
+(spacemacs/set-leader-keys "al" 'cfw:open-calendar-buffer)
+(spacemacs/set-leader-keys "aol" 'cfw:open-org-calendar)
