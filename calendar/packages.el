@@ -10,6 +10,7 @@
 (defconst calendar-packages
   '(
     calfw
+    (calfw-org :location local)
     org-gcal
     alert
     ))
@@ -18,11 +19,25 @@
   "Initialize calfw and add key-bindings"
   (use-package calfw
     :defer t
+    :commands (cfw:open-calendar-buffer)
+    :init
+    (spacemacs/set-leader-keys "aC" 'cfw:open-calendar-buffer)
     :config
     (progn
       (define-key cfw:calendar-mode-map (kbd "SPC") 'spacemacs-cmds)
       (define-key cfw:calendar-mode-map (kbd "TAB") 'cfw:show-details-command)
-      (define-key cfw:calendar-mode-map (kbd "C-j") 'cfw:navi-next-item-command)
+      (define-key cfw:calendar-mode-map (kbd "C-j") 'cfw:navi-next-item-command))))
+
+(defun calendar/init-calfw-org ()
+  "Initialize calfw-org and add key-bindings"
+  (use-package calfw-org
+    :defer t
+    :load-path "private/calendar/"
+    :commands (cfw:open-org-calendar)
+    :init
+    (spacemacs/set-leader-keys "aoC" 'cfw:open-org-calendar)
+    :config
+    (progn
       (define-key cfw:org-schedule-map (kbd "SPC") 'spacemacs-cmds)
       (define-key cfw:org-schedule-map (kbd "TAB") 'cfw:org-open-agenda-day)
       (define-key cfw:org-custom-map (kbd "SPC") 'spacemacs-cmds)
