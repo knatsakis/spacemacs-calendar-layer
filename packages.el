@@ -46,8 +46,11 @@
 (defun calendar/init-org-gcal ()
   "Initialize org-gcal"
   (use-package org-gcal
-    :defer t)
-  )
+    :defer t
+    :commands (org-gcal-sync
+               org-gcal-fetch
+               org-gcal-post-at-point
+               org-gcal-delete-at-point)))
 
 (defun calendar/init-alert ()
   "Initialize alert"
