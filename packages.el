@@ -8,12 +8,10 @@
 ;; License: MIT
 
 (defconst calendar-packages
-  '(
-    calfw
-    (calfw-org :location local)
+  '(calfw
+    calfw-org
     org-gcal
-    alert
-    ))
+    alert))
 
 (defun calendar/init-calfw ()
   "Initialize calfw and add key-bindings"
@@ -32,7 +30,6 @@
   "Initialize calfw-org and add key-bindings"
   (use-package calfw-org
     :defer t
-    :load-path "private/calendar/"
     :commands (cfw:open-org-calendar)
     :init
     (spacemacs/set-leader-keys "aoC" 'cfw:open-org-calendar)
