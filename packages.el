@@ -24,7 +24,8 @@
     (progn
       (define-key cfw:calendar-mode-map (kbd "SPC") 'spacemacs-cmds)
       (define-key cfw:calendar-mode-map (kbd "TAB") 'cfw:show-details-command)
-      (define-key cfw:calendar-mode-map (kbd "C-j") 'cfw:navi-next-item-command))))
+      (define-key cfw:calendar-mode-map (kbd "C-j") 'cfw:navi-next-item-command)
+      (define-key cfw:calendar-mode-map (kbd "C-k") 'cfw:navi-prev-item-command))))
 
 (defun calendar/init-calfw-org ()
   "Initialize calfw-org and add key-bindings"
@@ -52,5 +53,4 @@
 (defun calendar/init-alert ()
   "Initialize alert"
   (use-package alert
-    :defer t)
-  )
+    :defer t))
