@@ -9,8 +9,7 @@
 
 (defconst calendar-packages
   '(calfw
-    calfw-org
-    org-gcal))
+    calfw-org))
 
 (defun calendar/init-calfw ()
   "Initialize calfw and add key-bindings"
@@ -39,12 +38,3 @@
       (define-key cfw:org-schedule-map (kbd "TAB") 'cfw:org-open-agenda-day)
       (define-key cfw:org-custom-map (kbd "SPC") 'spacemacs-cmds)
       (define-key cfw:org-custom-map (kbd "TAB") 'cfw:org-open-agenda-day))))
-
-(defun calendar/init-org-gcal ()
-  "Initialize org-gcal"
-  (use-package org-gcal
-    :defer t
-    :commands (org-gcal-sync
-               org-gcal-fetch
-               org-gcal-post-at-point
-               org-gcal-delete-at-point)))
