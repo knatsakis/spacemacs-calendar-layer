@@ -10,8 +10,7 @@
 (defconst calendar-packages
   '(calfw
     calfw-org
-    org-gcal
-    alert))
+    org-gcal))
 
 (defun calendar/init-calfw ()
   "Initialize calfw and add key-bindings"
@@ -49,8 +48,3 @@
                org-gcal-fetch
                org-gcal-post-at-point
                org-gcal-delete-at-point)))
-
-(defun calendar/init-alert ()
-  "Initialize alert"
-  (use-package alert
-    :defer t))
